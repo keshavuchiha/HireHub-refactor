@@ -12,39 +12,66 @@ import {
   Center,
   Container,
   Stack,
+  Menu,
 } from "@mantine/core";
 import React from "react";
 import styles from "../styles/Layout.module.css";
 function HomePage() {
   return (
     <>
-      <Header height="10vh" className={styles.mainHeader}>
+      <Header height="10vh" className={styles.mainHeader} sx={{border:"none"}}>
         <Group>
           <span>HireHub</span>
-          <span>Home</span>
-          <span>Jobs</span>
+
+          <Menu trigger="hover">
+            <Menu.Target>
+              <Text>Menu</Text>
+            </Menu.Target>
+            <Menu.Dropdown>
+              <Menu.Item>Courses</Menu.Item>
+              <Menu.Item>Articles</Menu.Item>
+              <Menu.Item>Workshops</Menu.Item>
+              <Menu.Item>Technology</Menu.Item>
+            </Menu.Dropdown>
+          </Menu>
+            <Menu trigger="hover">
+              <Menu.Target>
+                <Text>Jobs</Text>
+              </Menu.Target>
+              <Menu.Dropdown>
+                <Menu.Item>Part Time</Menu.Item>
+                <Menu.Item>Full Time</Menu.Item>
+                <Menu.Item>Seasonal</Menu.Item>
+                <Menu.Item>Internship</Menu.Item>
+              </Menu.Dropdown>
+            </Menu>
           <span>Notifications</span>
         </Group>
         <Group>
           <span>SignIn</span>
-          <span>LogIn</span>
+          <span>Register</span>
         </Group>
       </Header>
       <div className={styles.imageBanner}>
         <Image
           alt=""
-          src="https://hirehubportal.herokuapp.com/images/home-banner.jpg"
+          src="/images/bg.jpg"
+          className={styles.mainBg}
+          height="100vh"
         />
         <div className={styles.imageText}>
           <h1>
             <strong>
-              Well help you find your{" "}
+            <Text span sx={{color:"white"}}>
+                Well help you find your{" "}
+              </Text>
+              
               <Text span color="red">
                 desired job
               </Text>
             </strong>
           </h1>
-          <Text fz="lg" c="dimmed">
+          <Text fz="lg" sx={{color:"white"}}>
             Find Jobs, Employment & Career Opportunities
           </Text>
           <Group>
@@ -121,7 +148,7 @@ function HomePage() {
         <div className={styles.imageText}>Hi</div>
       </div> */}
       <div className={styles.latestContainer}>
-        <Text fz="xl" sx={{margin:"3% 0"}}>
+        <Text fz="xl" sx={{ margin: "3% 0" }}>
           <strong>Latest Jobs</strong>
         </Text>
 

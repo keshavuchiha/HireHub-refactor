@@ -1,5 +1,5 @@
 .mainHeader{
-    position: sticky;
+    position: fixed;
     justify-content: space-between;
     display: flex;
     background-color: #212428;
@@ -32,4 +32,9 @@
 }
 .border{
     border: 1px solid black;
+}
+.mainBg{
+    filter: blur(10px);
+   -webkit-filter: blur(10px);
+   background-image: linear-gradient();
 }
